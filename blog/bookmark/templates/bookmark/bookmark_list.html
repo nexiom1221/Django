@@ -10,7 +10,8 @@
 
             <ul>
                 {% for bookmark in object_list %}
-                <li><a href="{% url 'detail' bookmark.id %}">{{ bookmark }}</a></li>
+                <li><a href="{{ bookmark.get_absolute_url }}">{{ bookmark }}</a></li>
+                <!-- {% url 'detail' bookmark.id %} -->
                 {% endfor %}
             </ul>
         </div>
