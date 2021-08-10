@@ -12,14 +12,14 @@ class Post(models.Model):
     class Meta:
         verbose_name = 'post'
         verbose_name_plural = 'posts'
-        db_table = 'blog_posts'
+        db_table = 'blog2_posts'
         ordering = ('-modify_dt',)
 
     def __str__(self):
         return self.title
     
     def get_absolute_url(self):
-        return reverse('blog:post_detail', args=(self.slug,))
+        return reverse('blog2:post_detail', args=(self.slug,))
 
     def get_previous(self):
         return self.get_previous_by_modify_dt()

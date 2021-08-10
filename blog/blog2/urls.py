@@ -1,7 +1,7 @@
 from django.urls import path,re_path
-from blog import views
+from blog2 import views
 
-app_name = 'blog'
+app_name = 'blog2'
 
 urlpatterns = [
     # /blog/
@@ -11,7 +11,7 @@ urlpatterns = [
     path('post/', views.PostLV.as_view(), name='post_list'),
 
     # /blog/post/django-exsample
-    re_path(r'^post/(?P<slug>[-w]+)/$', views.PostDV.as_view(), name='post_detail'),
+    re_path(r'^post/(?P<slug>[-\w]+)/$', views.PostDV.as_view(), name='post_detail'),
 
     # /blog/archive
     path('archive/', views.PostAV.as_view(), name='post_archive'),
