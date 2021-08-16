@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Bookmark Deatil</title>
-    </head>
+{% extends "base.html" %}
 
-    <body>
-        <div id='content'>
+{% block title %}bookmark_detail.html{% endblock %}
+
+{% block content %}
+
             <h1>{{ object.title }}</h1>
-
+            <br>
             <ul>
                 <li>URL : <a href="{{ object.url }}">{{ object.url }}</a></li>
             </ul>
-        </div>
-    </body>
-</html>
+
+{% endblock %}
