@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -41,6 +40,7 @@ INSTALLED_APPS = [
     'blog2.apps.Blog2Config',
     'taggit.apps.TaggitAppConfig',
     'taggit_templatetags2',
+    'photo.apps.PhotoConfig',
 ]
 
 MIDDLEWARE = [
@@ -129,8 +129,8 @@ STATICFILES_DIRS = [BASE_DIR, 'static']
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-#MEDIA_URL = '/media'
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR, 'media'
 
 TAGGIT_CASE_INSENSITIVE = True
 TAGGIT_LIMIT = 50
