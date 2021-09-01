@@ -8,7 +8,7 @@
             <br>
             <ul>
                 {% for bookmark in object_list %}
-                <li><a href="{{ bookmark.get_absolute_url }}">{{ bookmark }}</a></li>
+                <li><a href="{% url 'bookmark:detail' bookmark.id %}">{{ bookmark }}</a></li>
                 
                 {% endfor %}
             </ul>
