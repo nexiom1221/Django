@@ -30,8 +30,8 @@ urlpatterns = [
     path('blog2/', include('blog2.urls')),
     path('photo/', include('photo.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('account/register/', UserCreateView.as_view(), name='register'),
-    path('account/register/done', UserCreateDoneTV.as_view(), name='register_done'),
+    path('accounts/register/', UserCreateView.as_view(), name='register'),
+    path('accounts/register/done', UserCreateDoneTV.as_view(), name='register_done'),
 
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
