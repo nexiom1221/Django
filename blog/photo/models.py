@@ -6,6 +6,7 @@ from photo.fields import ThumbnailImageField
 class Album(models.Model):
     name = models.CharField(max_length=30)
     description = models.CharField('한줄작성', max_length=100, blank=True)
+    owner = models.ForeignKey('auth.User', on_delete=models.CASCADE, verbose_name='OWNER', blank=True, null=True)
 
     class Meta:
         ordering = ('name',)
@@ -23,6 +24,7 @@ class Photo(models.Model):
     description = models.TextField('Photo 설명', blank=True)
     image = ThumbnailImageField(upload_to = 'photo/%Y/%m')
     upload_dt = models.DateTimeField('업로드 날짜', auto_now_add=True)
+    owner = models.ForeignKey('auth.User', on_delete=models.CASCADE, verbose_name='OWNER', blank=True, null=True)
 
     class Meta:
         ordering = ('title',)
@@ -32,3 +34,4 @@ class Photo(models.Model):
     
     def get_absolute_url(self):
         return reverse('photo:photo_detail', args=(self.id,))
+
